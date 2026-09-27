@@ -1,0 +1,95 @@
+# Flip analyser assumptions. Every figure here is an editable default, not a fact.
+# Review before relying on a verdict; the report prints the file's as_of date.
+as_of: "2026-09-27"
+
+scope:
+  outward_codes: ["CB1"]            # exact outward code match (CB10/CB11 are not CB1)
+
+investor:
+  buyer_type: individual_additional # individual_additional | company | individual_main
+  company_developer_relief: true    # company >£500k: 17% flat rate unless relief applies
+
+hurdles:
+  target_profit_on_cost: 0.20       # residual solves max price at this profit on cost
+  min_profit_gbp: 50000
+  max_duration_months: 12
+  conditional_floor: 0.90           # max price >= 90% of asking -> CONDITIONAL, else NOT_VIABLE
+  comps_review_max_shift: 0.10      # LLM comps review moving GDV more than this caps at CONDITIONAL
+
+# SDLT, England residential. Verify against HMRC before use.
+sdlt:
+  as_of: "2025-04-01"
+  bands:                            # [upper_limit_gbp or null, rate]
+    - [125000, 0.00]
+    - [250000, 0.02]
+    - [925000, 0.05]
+    - [1500000, 0.10]
+    - [null, 0.12]
+  additional_dwelling_surcharge: 0.05
+  company_flat_rate_over_500k: 0.17
+
+finance:
+  ltv_on_purchase: 0.70
+  monthly_rate: 0.0085
+  arrangement_fee: 0.02
+  exit_fee: 0.01
+  works_funded_by_loan: false
+
+costs:
+  legal_purchase_gbp: 2500
+  survey_gbp: 1200                  # RICS Level 3
+  legal_sale_gbp: 1500
+  agent_fee_pct_of_gdv: 0.015
+  holding_per_month_gbp: 450        # council tax, insurance, utilities
+  professional_fees_pct_of_works: 0.08
+  planning_fee_gbp:
+    none: 0
+    prior_approval: 258
+    householder: 528
+    full_dwelling: 12000            # application + drawings + reports for a new dwelling
+  contingency: 0.15
+
+# Works cost bands, GBP per m2 of existing floor area (refurb) or new area (extension/build).
+works:
+  refurb_per_m2:
+    light: 350
+    medium: 800
+    heavy: 1400
+    structural: 2000
+  default_scope_when_unknown: medium
+  extension_per_m2: 2600
+  loft_per_m2: 2200
+  new_build_per_m2: 2800
+
+programme_months:
+  refurb: {light: 4, medium: 6, heavy: 9, structural: 11}
+  extension_pd_extra: 3
+  extension_full_planning_extra: 5
+  split: 10
+
+valuation:
+  comps_radius_m: 800               # ~0.5 mile
+  comps_months: 12
+  comps_expand_radius_m: 1600
+  comps_expand_months: 36
+  min_comps: 3
+  refurbished_quantile: 0.75        # refurbished value = this quantile of comps GBP/m2
+  as_is_quantile: 0.50
+  extension_marginal_ratio: 0.70    # added m2 valued at 70% of GBP/m2
+  street_ceiling_multiple: 1.00     # GDV capped at highest comparable sale x this
+
+extension:
+  added_m2_default:                 # used when geometry is unknown (estimate)
+    rear_single_storey: {terrace: 12, semi: 15, detached: 20}
+    loft: {terrace: 18, semi: 22, detached: 25}
+
+split:
+  min_plot_area_m2: 450
+  min_frontage_m: 12
+  garden_loss_discount: 0.10        # value lost by the main house
+  new_dwelling_m2: 90
+  developer_margin_on_plot: 0.20
+
+neighbours:
+  radius_m: 150
+  adjoining_number_gap: 2

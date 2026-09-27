@@ -1,0 +1,2 @@
+[console_scripts]
+flip = flip.cli:main

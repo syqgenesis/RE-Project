@@ -1,0 +1,15 @@
+# Copy to cases/cases.yaml and fill in one entry per property.
+# `url` alone is enough if the listing page parses; any field you give overrides the listing.
+cases:
+  - case_id: case1
+    url: https://www.rightmove.co.uk/properties/000000000
+    # address: 12 Mill Road, Cambridge
+    # postcode: CB1 2AB
+    # asking_price: 525000
+    # tenure: Freehold
+    # property_type: semi          # detached | semi | terrace | end-terrace | bungalow | flat
+    # floor_area_m2: 95
+    # bedrooms: 3
+    # title_checked: false         # true once the HMLR title register confirms freehold
+    # photos: []                   # local paths or URLs, if the listing doesn't provide them
+    # historical_images: []        # manual captures, filename must contain the year, e.g. ge_2012.png
