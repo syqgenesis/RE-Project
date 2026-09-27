@@ -330,6 +330,26 @@ can't open them):
 - How documents link to applications (file path column? URL?).
 - How applications link to an address or UPRN.
 
+## 4c. Execution handoff: run on your Mac
+
+This cloud session can't reach your Mac, so the analysis runs in a Claude Code session **on your
+Mac**. Start it in the project folder with either:
+- the Claude Desktop app, pointed at `…/RE-Project`; or
+- `claude remote-control` in a terminal there. The session then shows up in the Claude Code app.
+
+In that session, pull `PLAN.md` from `claude/confident-shannon-2g1hmm`. It then does M0 from the
+files that already exist (**the DB structure is in them; nothing more is needed from you**):
+1. Read the schema directly:
+   - the collection code/migrations in `.local/` and the project folder;
+   - `information_schema` via a read-only connection to the running Postgres;
+   - the exports in `…/RE Project/collection`.
+2. Write the discovery report:
+   - tables and row counts;
+   - which column is the one-line description;
+   - document links, and address/UPRN keys;
+   - the readability status of descriptions and document files.
+3. Build `sources/user_db.py`, then continue M1→M5 per this plan.
+
 ## 5. Data sources
 
 | Need | Source | Access |
