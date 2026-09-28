@@ -92,7 +92,7 @@ Cambridge is the most expensive place to rent in Cambridgeshire: £1,805 pcm (ON
 
 ### Inferences
 - A £1,805 pcm average rent against a £475k average price gives about **4.6% gross** (computed: 1,805 × 12 / 475,000). This matches the 3–5% range above. Plain buy-to-let in CB1–CB3 is thin, so value-add (extra bedrooms, loft or extension, splitting into flats where permitted) matters more for landlords.
-- An Article 4 on C3→C4 is likely to be made in 2027 or later. It would usually need 12 months' notice without compensation liability, but the timing is unconfirmed. It would remove the "family house to small HMO without planning" route that student-area investors use (CB1 Mill Road/Romsey and CB4 are typical). Screening should flag HMO-conversion upside as **policy-at-risk** from autumn 2026.
+- An Article 4 on C3→C4 is likely to be made in 2027 or later. From general planning practice (not sourced here), councils usually give 12 months' notice to avoid compensation liability, but Cambridge's timing is unconfirmed. It would remove the "family house to small HMO without planning" route that student-area investors use (CB1 Mill Road/Romsey and CB4 are typical). Screening should flag HMO-conversion upside as **policy-at-risk** from autumn 2026.
 - Decade-high yields plus reports of landlords leaving suggest a supply of tired ex-rental stock, which suits refurb or flip buyers.
 
 ### Gaps
